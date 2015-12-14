@@ -4,9 +4,9 @@ machine:
 
 test:
   override:
-      - git clone 
+      - git clone https://github.com/letsencrypt/letsencrypt.git 
       - docker info
-      - docker build -t coinpit/nginx-docker .
+      - docker build -t coinpit/nginx-docker letsencrypt
 
 deployment:
   hub:
