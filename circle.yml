@@ -6,11 +6,11 @@ test:
   override:
       - git clone https://github.com/letsencrypt/letsencrypt.git 
       - docker info
-      - docker build -t coinpit/nginx-docker letsencrypt
+      - docker build -t coinpit/letsencrypt letsencrypt
 
 deployment:
   hub:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push coinpit/nginx-docker
+      - docker push coinpit/letsencrypt
